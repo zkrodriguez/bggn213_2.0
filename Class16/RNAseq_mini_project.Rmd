@@ -1,0 +1,201 @@
+---
+title: "Class_16"
+author: "Zaida Rodriguez (PID:A59010549)"
+date: "11/19/2021"
+output: pdf_document
+---
+
+RNAseq Mini Project:
+1. Data import (countdata and coldata/metadata)
+2. PCA (qc)
+3. DESEQ Analysis
+4. Volcano Plot
+5. Annotataion
+6. Pathways Analysis
+
+```{r}
+library(DESeq2)
+library(BiocManager)
+```
+
+# 1.Data import
+
+first read in the data
+```{r}
+countsfile <- read.csv("GSE37704_featurecounts.csv", row.names=1)
+coldata <- read.csv("GSE37704_metadata.csv")
+```
+
+
+```{r}
+head(countsfile)
+head(coldata)
+```
+
+You have to delete the length column
+```{r}
+counts <- countsfile[,-1]
+head(counts)
+```
+
+Delete the rows that have zeros
+Side-note: `!=` means not equals. This code tells the system that we want to keep all the rows that are not equal to zero.
+
+```{r}
+counts <- counts[rowSums(counts) !=0,]
+head(counts)
+```
+
+check how many genes there are now
+```{r}
+nrow(counts)
+```
+
+# 2. PCA for Quality Control
+
+```{r}
+pca <- prcomp(t(counts), scale=T)
+summary(pca)
+```
+
+Do a quick plot
+```{r}
+plot(pca$x[,1:2])
+```
+
+
+```{r}
+plot(pca$x[,1:2], pch=16, col=as.factor(coldata$condition))
+text(pca$x[,1:2], labels = coldata$condition)
+```
+#3. DESEQ Analysis
+
+```{r}
+dds = DESeqDataSetFromMatrix(countData=counts,
+                             colData=coldata,
+                             design=~condition)
+dds = DESeq(dds)
+dds
+```
+
+```{r}
+res = results(dds)
+```
+
+```{r}
+summary(res)
+```
+
+# 4.Volcano Plot
+
+create the volcano plot
+```{r}
+plot(res$log2FoldChange, -log(res$padj))
+```
+
+Add some color
+```{r}
+# Make a color vector for all genes
+mycols <- rep("gray", nrow(res))
+
+# Color red the genes with absolute fold change above 2
+mycols[abs(res$log2FoldChange) > 2 ] <- "red"
+
+# Color blue those with adjusted p-value less than 0.01 and absolute fold change more than 2
+inds <- (res$padj <0.01) & (abs(res$log2FoldChange) > 2 )
+mycols[inds] <- "blue"
+
+plot(res$log2FoldChange, -log(res$padj), col=mycols, xlab="Log2(FoldChange)", ylab="-Log(P-value)" )
+```
+
+#5. Annotation
+
+```{r}
+library("AnnotationDbi")
+library("org.Hs.eg.db")
+```
+
+To see the available packages:
+```{r}
+columns(org.Hs.eg.db)
+```
+
+```{r}
+res$symbol = mapIds(org.Hs.eg.db,
+                    keys=row.names(res), 
+                    keytype="ENSEMBL",
+                    column= "SYMBOL",
+                    multiVals="first")
+```
+
+```{r}
+res$entrez = mapIds(org.Hs.eg.db,
+                    keys=row.names(res),
+                    keytype="ENSEMBL",
+                    column="ENTREZID",
+                    multiVals="first")
+```
+
+```{r}
+res$name =   mapIds(org.Hs.eg.db,
+                    keys=row.names(res),
+                    keytype="ENSEMBL",
+                    column="GENENAME",
+                    multiVals="first")
+```
+
+```{r}
+head(res, 10)
+```
+
+```{r}
+res = res[order(res$pvalue),]
+write.csv(res, file ="deseq_results.csv")
+```
+
+#6. Pathway Analysis
+
+```{r}
+library(pathview)
+library(gage)
+library(gageData)
+
+data("kegg.sets.hs")
+data("sigmet.idx.hs")
+
+# Focus on signaling and metabolic pathways only
+kegg.sets.hs = kegg.sets.hs[sigmet.idx.hs]
+
+# Examine the first 3 pathways
+head(kegg.sets.hs, 3)
+```
+
+```{r}
+foldchanges = res$log2FoldChange
+names(foldchanges) = res$entrez
+head(foldchanges)
+```
+
+Get the results and look at them 
+```{r}
+keggres = gage(foldchanges, gsets=kegg.sets.hs)
+attributes(keggres)
+```
+
+Look at the first few down (less) pathways
+
+```{r}
+head(keggres$less)
+```
+
+Make a pathway plot now! 
+```{r}
+pathview(gene.data=foldchanges, pathway.id="hsa04110")
+```
+
+![](hsa04110.pathview.png)
+
+
+
+
+
