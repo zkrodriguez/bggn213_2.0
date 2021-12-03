@@ -1,0 +1,304 @@
+---
+title: "Class17_Covid19"
+author: "Zaida Rodriguez (PID:A59010549)"
+date: "11/24/2021"
+output:
+  pdf_document:
+    latex_engine: xelatex
+---
+
+
+# Background
+
+In this before Thanksgiving class when many of our class mates are traveling let's have a look at COVID-19 vaccination rates around the State.
+
+https://data.ca.gov/dataset/covid-19-vaccine-progress-dashboard-data-by-zip-code
+
+## Import the data
+
+```{r}
+vax <- read.csv("covid19vaccinesbyzipcode_test.csv")
+head(vax)
+```
+
+> Q. How many enteries do we have ?
+
+```{r}
+nrow(vax)
+```
+
+We can use the **skimr** package, specifically the `skim() function` to get a quick overview of structgure of this dataset.
+
+The 2 colons tells the system that you want to use that package. Follow it by the function you want to use. This way it hasn't loaded your package as you only plan on using it once
+
+```{r}
+skimr::skim(vax)
+```
+
+Notice that one of these columns is a date column. Working with time adn dates get's annoying quickly. Therefore, use the following package **lubridate** to help you out. `today() function` returns today's date 
+
+```{r}
+library(lubridate)
+today()
+```
+
+>Q. How many days have passed since the first entry in the dataset?
+
+```{r}
+vax$as_of_date[1]
+#vax = dataset, $= calling column, name of column, [which column]
+```
+
+The belows doesn't work because our data column was read as a character 
+```{r}
+# today() - vax$as_of_date[1]
+```
+
+The `ymd() function` will rearrange the data to month date year
+```{r}
+d <- ymd(vax$as_of_date)
+```
+
+Now call the first one
+```{r}
+d[1]
+#gives you the first entry
+
+today() - d[1]
+```
+
+I will make the `as-of-date` column Date format ... 
+
+```{r}
+vax$as_of_date <- ymd(vax$as_of_date)
+```
+
+> Q. When was the dataset last updated, ie: What is the last date in this dataset? How many days since last update?
+
+```{r}
+vax$as_of_date[nrow(vax)]
+```
+
+How many days since the last update?
+
+```{r}
+today() - vax$as_of_date[nrow(vax)]
+```
+
+> Q. How many days does the dataset span?
+
+```{r}
+vax$as_of_date[nrow(vax)] - vax$as_of_date[1]
+```
+
+>Q. How many different zip codes areas are in this dataset?
+
+```{r}
+#zipcode = column 2
+unique(vax[2])
+length(unique(vax$zip_code_tabulation_area))
+```
+
+To work with ZIP codes we can use the **zipcodeR** package
+
+```{r}
+library(zipcodeR)
+```
+
+```{r}
+reverse_zipcode(c('92037', "92109") )
+```
+## Focus in on San Diego County 
+
+We want to subset the full CA `vax` data down to just San Diego County.
+
+```{r}
+vax$county=="San Diego"
+inds <- vax$county=="San Diego"
+vax[inds,]
+```
+
+```{r}
+nrow(vax[inds,]) #number of SD enteries
+```
+
+The sub-setting above can get quite tedious and complicated when there are multiple things we want to subset by. Use the **dplyr** package.
+
+```{r}
+library(dplyr)
+```
+
+Lets use the `filter() function` to do our subsetting from now on as it is a bit easier. This is the traditional method. Remember we want to focus in on SD county
+
+```{r}
+sd <- filter(vax, county=="San Diego")
+nrow(sd)
+```
+
+For more complicated sub-setting....
+
+```{r}
+sd.20 <- filter(vax, county=="San Diego", 
+        age5_plus_population > 20000)
+nrow(sd.20)
+```
+
+Let's look at the vaccination rate in San Diego from yesterday, 2021-23-11
+
+> Q. What is the average vaccination rate of San Diego county as of yesterday?
+
+```{r}
+sd.current <- filter(vax, county=="San Diego", 
+                     as_of_date=="2021-11-23")
+head(sd.current)
+(sd.current$percent_of_population_fully_vaccinated)
+# there are NA's in there so we can use mean until those are removed
+
+summary(sd.current$percent_of_population_fully_vaccinated)
+```
+
+
+> Q. Make a histogram 
+
+Base R histogram
+```{r}
+hist(sd.current$percent_of_population_fully_vaccinated)
+```
+
+The plot above is being skewed by ZIP code areas with small populations. these will have big effects for just a small number of unvax-ed people...
+
+> Q. What is the population of the 92037 ZIP code area?
+
+```{r}
+lj <- filter(sd.current, zip_code_tabulation_area=="92037")
+lj$age5_plus_population
+```
+
+
+> Q. What is the average vaccination value for this UCSD/La Jolla ZIP code area?
+
+```{r}
+lj$percent_of_population_fully_vaccinated * 100
+```
+
+> Q. What about this zipcode 90717?
+
+```{r}
+
+lomita <- filter(vax, zip_code_tabulation_area=="90717", as_of_date=="2021-11-23")
+head(lomita)
+lomita$percent_of_population_fully_vaccinated * 100
+```
+
+---
+
+Time series of vaccination rate for a given ZIP CODE area.
+Start with 92037.
+
+```{r}
+lj <- filter(vax, zip_code_tabulation_area=="92037")
+
+library(ggplot2)
+
+ggplot(lj) +
+  aes(x=as_of_date,
+      y=percent_of_population_fully_vaccinated) +
+  geom_point() +
+  geom_line(group=1)+
+  labs(x="Date",
+       y="Percent Vaccinated")
+
+```
+
+Let's make this plot for all SD county ZIP cdoe areas that have a population at least as large as 92037. 
+
+```{r}
+vax$age5_plus_population
+sd.36p <- filter(vax, county=="San Diego",
+             age5_plus_population > 36144)
+head(sd.36p)
+```
+
+Let's make a plot for all of these
+
+> Q. How many ZIP code areas in San Diego county have a population larger than 92037?
+
+```{r}
+length(unique(sd.36p$zip_code_tabulation_area))
+```
+
+Now make a plot
+
+```{r}
+ggplot(sd.36p) +
+  aes(x=as_of_date,
+      y=percent_of_population_fully_vaccinated,
+      group=zip_code_tabulation_area) +
+  geom_line()+
+  labs(x="Date",
+       y="Percent Vaccinated")
+```
+
+Let's make a plot with all of California.
+First filter by population to avoid skewing.
+
+```{r}
+ca.now <- filter(vax, age5_plus_population > 36144)
+head(ca.now)
+```
+
+How many different zip codes ?
+
+```{r}
+length(unique(ca.now$zip_code_tabulation_area))
+```
+
+now plot
+
+```{r}
+ggplot(ca.now) +
+  aes(x=as_of_date,
+      y=percent_of_population_fully_vaccinated,
+      group=zip_code_tabulation_area) +
+  geom_line(alpha=0.2, size=0.2)+
+  labs(x="Date",
+       y="Percent Vaccinated")
+```
+
+> Q. What is the mean across the state for these 36k + population areas?
+
+Filter the subset
+```{r}
+ca.current <- filter(ca.now, as_of_date=="2021-11-23")
+summary(ca.current$percent_of_population_fully_vaccinated)
+```
+
+```{r}
+ggplot(ca.now) +
+  aes(x=as_of_date,
+      y=percent_of_population_fully_vaccinated,
+      group=zip_code_tabulation_area) +
+  geom_line(alpha=0.2, size=0.2)+
+  labs(x="Date",
+       y="Percent Vaccinated") +
+  geom_hline(yintercept=0.67, col="red")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
