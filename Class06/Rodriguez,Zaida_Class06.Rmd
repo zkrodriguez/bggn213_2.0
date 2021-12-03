@@ -1,0 +1,235 @@
+---
+title: "Class06:R_Functions"
+author: "Zaida Rodriguez (PID:A59010549)"
+date: "10/15/2021"
+output:
+  pdf_document: default
+---
+
+## Quick Rmarkdown intro
+
+You can write text like any file. You can file text to be **bold** or *italic*.
+
+Do:
+
+- this
+- and that
+- and another thing
+
+This is more text
+
+but in order to make a new line add two spaces
+
+---
+
+We can include some code: 
+```{r}
+plot(1:10)
+```
+
+```{r}
+#This is a comment that will not be passed to R
+plot(cars)
+```
+
+
+## Write a function
+> **Q1**. Write a function grade() to determine an overall grade from a vector of student homework assignment scores dropping the lowest single score. If a student misses a homework (i.e. has an NA value) this can be used as a score to be potentially dropped. Your final function should be adquately explained with code comments and be able to work on an example class gradebook such as this one in CSV format: “https://tinyurl.com/gradeinput” [3pts]
+
+
+```{r}
+# Example input vectors to with
+student1 <- c(100, 100, 100, 100, 100, 100, 100, 90)
+student2 <- c(100, NA, 90, 90, 90, 90, 97, 80)
+student3 <- c(90, NA, NA, NA, NA, NA, NA, NA)
+```
+
+
+First find the lowest score. You can use the **min()** to find it and the **which.min()** finds the position/location (position in vector).
+```{r}
+min(student1)
+which.min(student1)
+```
+
+You can omit the lowest score by **[-which.min(studentx)]. Overall, you can use minus to get everything in the vector but the lowest score
+```{r}
+student1[-which.min(student1)]
+```
+
+
+Now I can call the **mean()** function to get the average
+```{r}
+mean(student1[-which.min(student1)])
+```
+
+Now try it for student 2
+```{r}
+mean(student2[-which.min(student2)])
+```
+
+This doesn't work on student 2. Dissect code and see where it is not working
+```{r}
+student2
+which.min(student2)
+```
+
+```{r}
+mean(student2)
+```
+```{r}
+mean(student2, na.rm = TRUE)
+```
+
+If you use **na.rm = TRUE**, the system will omit NA's but the problem is that it will mess with your mean value, something you dont want. 
+
+Instead try changing NA to a zero value. If you don't know how to do this try googling it. 
+```{r}
+which(is.na(student2))
+# this is telling us the position of the NA 
+```
+
+
+The **is.na()** function returns a logical vector that tells us where TRUE elements indicate the presence of NA values. 
+```{r}
+is.na(student2)
+
+#btw, if you put an ! in front of that function, it will flip you answers. In other words, the trues will become false and vice versa
+```
+
+Lets replace the NAs with zero by first copying the student2 data and overwriting in that value set in order to not destroy the original. 
+```{r}
+student.prime <- student2
+student.prime[is.na(student.prime)] =0
+student.prime
+```
+
+Now we can find the mean while excluding the lowest score
+```{r}
+mean(student.prime[-which.min(student.prime)])
+```
+
+Now lets try on student 3
+```{r}
+student.delta <- student3
+student.delta[is.na(student.delta)] =0
+student.delta
+mean(student.delta[-which.min(student.delta)])
+```
+
+Time to simplify the code snippet 
+
+We can make the object names clearer
+```{r}
+x <- student3
+x[is.na(x)] =0
+mean(x[-which.min(x)])
+```
+
+Wait, the data was entered wrong
+```{r}
+student4 <- c(100, NA, 90, "90", 90, 90, 97, 80)
+x <- student4
+x <- as.numeric(x)
+x[is.na(x)] =0
+mean(x[-which.min(x)])
+```
+
+Now we can write out function. Make sure to input all 3 parts of a function
+
+```{r}
+grade <- function(x) {
+x <- as.numeric(x)
+x[is.na(x)] =0
+mean(x[-which.min(x)])
+}
+```
+
+You could also highlight the code snippet you want, go to the **code** tab and then click on **extract function** and R will create the function after you name it.
+
+After running the function, test to make sure it works
+
+```{r}
+grade(student1)
+grade(student2)
+grade(student3)
+```
+
+##Now grade a whole class
+
+First, read the gradebook for the class
+```{r}
+gradebook <- "https://tinyurl.com/gradeinput"
+scores <- read.csv(gradebook, row.names = 1)
+scores
+```
+
+We are going to use **apply()** function to grade all the students with our **grade()** function.
+
+```{r}
+ans <- apply(scores, 1, grade)
+```
+
+The apply function grabs the entire matrix and by telling it 1, the function will be applied to all rows. If you wanted the columns you would tell it 2. 
+
+> Q2. Using your grade() function and the supplied gradebook, Who is the top scoring student overall in the gradebook?
+
+```{r}
+which.max(ans)
+```
+
+> Q3. From your analysis of the gradebook, which homework was toughest on students (i.e. obtained the lowest scores overall?
+
+To find the homework, look at the columns using the **apply()** function. 
+
+```{r}
+apply(scores, 2, mean)
+```
+
+An NA appears, you have to remove it by overwriting it with zero
+
+```{r}
+mask <- scores
+mask[is.na(mask)] =0
+mask
+```
+
+now try finding the lowest homework again.
+```{r}
+apply(mask, 2, mean)
+```
+
+The mean allows you to find the average in all columns to determine which one had the lowest scores
+
+> Q4: From your analysis of the gradebook, which homework was most predictive of overall score (i.e. highest correlation with average grade score)?
+
+Here we will use the **cor()** function
+
+```{r}
+cor(mask$hw1, ans)
+```
+
+While you can use the **cor()** to each, the **apply()** will apply it to all the columns making your life so much easier
+
+```{r}
+apply(mask, 2, cor, ans)
+```
+
+make a boxplot
+```{r}
+boxplot(scores)
+```
+
+```{r}
+student <- c(100, 100, 100,90)
+grade2 <- function(x, drop.lowest=TRUE){
+  x <- as.numeric(x)
+  x[is.na(x)]=0
+  if(drop.lowest){
+    mean(x[-which.min(x)])
+  }
+  
+}
+grade2(student, drop.lowest=FALSE)
+
+```
+
