@@ -1,0 +1,218 @@
+CLUSTAL W (1.83) multiple sequence alignment
+
+lcl|Query_10001               -----MSTVKSKD-KTVKRKNVQVAVRIRPLSDIERSGCNKNIVSCDRVARTVSLKAIGF
+lcl|Query_10002               -----MSATKPRGGKIARKKNVQVAVRIRPSSS-ELSMGNENITSFDPVTKTVMLKAINA
+lcl|Query_10003               -----MN--KPKD-KKNGKKNVQVVVRLRPLNNTERNEGGISTIKADVVTKTIATSV---
+lcl|Query_10004               -----MSHAKRPA-AKPKKQNIQVAVRVRPLNSSELSTNAKNIVILDHVAKAITLKD---
+lcl|Query_10005               -----MS--KQTQ----RKKNVQVVVRIRPLNGKEIMEKGRSVASIDRDTKVVYLRD---
+lcl|Query_10006               M----MNKDKCST--VHKKKNVQVVVRVRPLSDKERAERSHLAVRTNGLAQTVSLKE---
+lcl|Query_10007               MASQPNSSAKKKE---EKGKNIQVVVRCRPFNLAERKASAHSIVECDPVRKEVSVRTGGL
+                                       *          * ** ** **    *                         
+
+lcl|Query_10001               SDSSRFGQGQKCFGPYDKIFGPESTQMEVYEGVLAPLMEDVLNGYNCTVFAYGQTGSGKT
+lcl|Query_10002               SDPKRHTQGQKSFGPYDKVFGPESTQLHVYNGIVDSLMKEVLNGYNCTVFAYGQTGSGKT
+lcl|Query_10003               ---------GKQFGPFDKCYGPEATQQEVYMDTVAPLIKEVLNGFNCTVFAYGQTGTGKT
+lcl|Query_10004               ------RTGSRVYQPYDKIYGEKESQATVYNDLIAPLVGEVLSGYNCTVFVYGQTGTGKT
+lcl|Query_10005               ------KLNMRQFGPFDRAYDEDASQIVVYKEVVAPLISQVLNGYNCTVFAYGQTGSGKT
+lcl|Query_10006               ------RSSWREFGPFDKVYGIDSSQSTIYMDIVDPLIKEVIQGYNCTVFAYGQTGTGKT
+lcl|Query_10007               AD-----KSSRKTYTFDMVFGASTKQIDVYRSVVCPILDEVIMGYNCTIFAYGQTGTGKT
+                                              *        *   *          *  * *** * ***** ***
+
+lcl|Query_10001               YTMEG---RHDTSEDFAWNTDPTAGIIPRALDQIFSVLG-ED-IDYTVRVGYVEIYNEQI
+lcl|Query_10002               YTMEGSLGEYTTS----LNIDPTAGIIPRALFQIFSELGTDD-IDYNIRVSYVELYNEQI
+lcl|Query_10003               FTMEGT---HDEEGDYSWDSDPKAGIIPRALHQIFSALA-GI-EDFCVRVSYVELYNEEL
+lcl|Query_10004               YTMEGR---HDDSGEYSWQNDPSSGVIPRALHHIFSELEKQELEEYSVRVSYLELYNEEL
+lcl|Query_10005               YTMEGH---HDDNGEFSWEDDPKAGIIPRALHHIFTTLETEKPEDYSVRASYVELYNEQL
+lcl|Query_10006               YTMEGE---HDPNGSYSWKDDPHMGIIPRALMHIFTELDRQKVEEYSVRVSYVELYNEEL
+lcl|Query_10007               FTMEGE---RSPNEEYTWEEDPLAGIIPRTLHQIFEKLT-DNGTEFSVKVSLLEIYNEEL
+                               ****               **  * *** *  **  *               * ***  
+
+lcl|Query_10001               FDLLNQTE-SQLESLRIFDDK--TKGVSIAGAEEVIVRSPKEVHELLRRGAEKRRTATTL
+lcl|Query_10002               FDLLSQSETSQLESLRIFDDK--IKGVFIAGVEEVIVSSHKEIYELLRRGAEKRRTASTL
+lcl|Query_10003               YDLLGPAGDAE-QRLRIFDDKAHGNGILINNLTEVTVRNRNEVYSLLKKGAERRRTAATL
+lcl|Query_10004               YDLLGASDLKN-TRLRIFEDPMKKGSVVINGMEEVPVKDREEVYKLLKRGAERRQTAATL
+lcl|Query_10005               FDLLSVNN----QPLRVYDNK--ENGIVISGMEDTPVRSRTEVYEILKRGAEKRKTAATL
+lcl|Query_10006               YDLLSRSDQQQ-PRLRIFEDAIRKGSVVIAGLEEVAVRERDEVYELLRRGAEKRKTAATW
+lcl|Query_10007               FDLLNPSSDVS-ERLQMFDDPRNKRGVIIKGLEEITVHNKDEVYQILEKGAAKRTTAATL
+                               ***          *             *       *    *    *  **  * ** * 
+
+lcl|Query_10001               MNMTS-------------SRSHSVFTVYVMIREPGLVNGEELLRQGKLNLVDLAGSENIG
+lcl|Query_10002               LNMTSRFINFMRFYLVNFSRSHSVFTVTVVIREPGLIDGEELLRQGKFNFVDLAGSENIE
+lcl|Query_10003               MNMSS-------------SRSHSVFTVSVLFRDNETKSEELLLKTGKLNLVDLAGSENIG
+lcl|Query_10004               MNMNS-------------SRSHSVFTVTVVIRENS-VSGEELLKQGKLHLVDLAGSENVK
+lcl|Query_10005               MNISS-------------SRSHSVFTLTVTTRQT--IDDEELLRVGKIHLVDLAGSENVG
+lcl|Query_10006               LNSTS-------------SRSHSVFTVTLVIRENS-LGGEELIKQGKIHLVDLAGSENIG
+lcl|Query_10007               MNAYS-------------SRSHSVFSVTIHMKETT-IDGEELVKIGKLNLVDLAGSENIG
+                               *  *             *******              * *   **   ********  
+
+lcl|Query_10001               RSGATDIRAREAGNINTSLLALGRVINALTMGASHIPYRESKLTRILQDSLGGKTITTII
+lcl|Query_10002               RSGATNIRAREAGNINTSLLSLGRVINALTMGASHIPYRESKLTRILQDSLGGKTITTIM
+lcl|Query_10003               RSGSTAGRAREAGSINQSLLTLGRVITALTSNASHIPYRESKLTRILQDSLGGKTITTII
+lcl|Query_10004               KSGAQDTRAREAGNINQSLLTLGRVINSLTSNAGHIPYRESKLTRILQDSLGGRTITTLI
+lcl|Query_10005               RSGAVDQRAREAGNINTSLLALGRVINALTSNAAHIPYRESKLTRILQDSLGGKTITTII
+lcl|Query_10006               RSGAIEMRAREAGNINQSLLTLGRVIKALTSGAGHIPYRESKLTRLLQDSLGGKTITTVI
+lcl|Query_10007               RSGAVDKRAREAGNINQSLLTLGRVITALVERTPHVPYRESKLTRILQDSLGGRTRTSII
+                               **    ****** ** *** *****  *     * ********* ******* * *   
+
+lcl|Query_10001               ATISPASSNFEESVNTLDYAQRAKNIKNNPEVNQRITRRGLLKEYNDEIDRLRRDLLAAR
+lcl|Query_10002               ATISPASSNFEESVNTLDYAQRAKNIKNNPQVNLRITQRGLINEYNEEINRLRRDLLAAR
+lcl|Query_10003               ATLTPSSTSLEESVSTLEYAQRAKNIKNSPEVNQ-ITRKALLREYSDEIERLRRDLIAAR
+lcl|Query_10004               ATLSPASSNFEETVNTLEYALRAKNIKNHPEVNEKLSRRALLKEYNEEIERLRKDLMAAR
+lcl|Query_10005               ATLSPASTNLEESVSTLEYGQRAKNIRNNPEANKCVSRKRILLAYDEEIARLQKDLASAR
+lcl|Query_10006               ATLSPASSNLEESLNTLEYASSAKNIKNHPEINQKLSRRDLLKQYNNEVEKLRRDLQAAR
+lcl|Query_10007               ATISPASLNLEETLSTLEYAHRAKNILNKPEVNQKLTKKALIKEYTEEIERLKRDLAAAR
+                              **  * *   **   ** *   **** * *  *           *  *   *  **  **
+
+lcl|Query_10001               EKHGIYLDKENYE------------------YVEELETQLEGKLRQVQILLEDFAVMDQH
+lcl|Query_10002               EKHGIYLAKENYDEMVETIDEKKAKIQELESQIEELEGQLEVQLHRFKTLLGDFSVMHQH
+lcl|Query_10003               EKNGVFLAQENYDELQEQIKENNAR-------IDELEAQLEVTMRKYEQVVKDFEFIDQQ
+lcl|Query_10004               EQNGVYLDAENYEGMVEQIQHQTER-------IERIEGELEGVLSKFQRALSDIEMMESH
+lcl|Query_10005               CGQGFYVDKENYEQMQNENAESREK-------LENLEAELAEKLTKLMNMTEDLSFMDEQ
+lcl|Query_10006               DKNGIYVDKENFEEMEARIAEQTEQ-------IDDLTDKLGATMSQLQTLMQDIEVMDEH
+lcl|Query_10007               EKNGVYISEENFRVMSGKLTVQEEQIVEL---IEKI-GAVEEELNRVTELFMDNK-----
+                                 *     **                                         *       
+
+lcl|Query_10001               YKSIYEKFRSALTKLESRKEEIEELSLEIAQTKDNYNAASQALSVSCDSFVRLRSQALKL
+lcl|Query_10002               YTSIYAKYRAAMAKLEEKNAKIGELSLELSHTKDDLTATTEVISVYENSLAGIK--ALPS
+lcl|Query_10003               YQIAYQKHLAALSKLAMRMDELKVEKEERLKSLKQYEAAKLALEQSEDEGRKLYAQARQV
+lcl|Query_10004               YRRVYDRNQLMHSKLEKRRFEVEQLSKDLAATKHTLEATEYALAESQKYGETARSQNIEL
+lcl|Query_10005               YQRAYQDLKARTARYERRVRENEKLKKELSDMSNSYNSAVDALQIFEGVADKLRAREKKH
+lcl|Query_10006               YARAYERCVHLTNKLTQRNEEIAALKVELSETKSELEYQKRALKVLQEAGDSSESQAVEL
+lcl|Query_10007               -----NELDQCKSDLQNKTQELETTQKHLQETKLQLVKEEYITSALESTEEKLHDAASKL
+                                                                                          
+
+lcl|Query_10001               QTYSNGLYSQNGLLFNKIDEVLTTFDGNYQKLKELFDGQ---------------------
+lcl|Query_10002               ST----------LLYNQIRSTLVT--PNKVENRESFFES---------------------
+lcl|Query_10003               NESNIVIGNELEKMHEKYMKCQMIFEENNKLLGNFSANQIGSTHRMKDEIYQFNS-----
+lcl|Query_10004               GETCTILSSHLDKTHHKIDELKAMFVANDKLYGDFTAERIHKIHDLDSVLQKCRSKVQDV
+lcl|Query_10005               HETALTFYEELNQAQNKIEQFRDMNEKNDHLMGEFSADFINKSNKTKTEVVENVR-----
+lcl|Query_10006               IENCEALSDDLERAHDKIDSLRGVCTRNAAQLEELRRQRETETNDITTVVDSWNQITQQE
+lcl|Query_10007               LNTVEETTKDVSGLHSKLDRKKAVDQHNAEAQDIFGKNLNSLFNNMEELIKDGSS-----
+                                                         *                                
+
+lcl|Query_10001               ------------------------------------------------------------
+lcl|Query_10002               ------------------------------------------------------------
+lcl|Query_10003               ---------ASIADIESMKGHCRAIHDASVQRLRKM------------------------
+lcl|Query_10004               SNETSGLVDASSALIQDLCISIRSIFSDTVSRIESY------------------------
+lcl|Query_10005               --------EKSKVTVSELETKLFGLKDDITRKLETN------------------------
+lcl|Query_10006               ASVMDSHCERLLSQLRSSEQMLSKQMSGLIAQVEKSAKEMEKTVNRAHEEAIAEYGNHTD
+lcl|Query_10007               ---------KQKAMLEVHKTLFGNLLSSSVSALDTITTVALGSLTSIPENVSTHVSQIFN
+                                                                                          
+
+lcl|Query_10001               ------------------------------------------------------------
+lcl|Query_10002               ------------------------------------------------------------
+lcl|Query_10003               ------EE-------------------------VSKSVNVLVHDARGYLSDLLSEFKNNS
+lcl|Query_10004               ---------------------------------ASNFTASLESDCYQHLSTLKTQ-SMES
+lcl|Query_10005               ------EE-------------------------SAANVIKQVKSMSESIKSVLDGHDIQL
+lcl|Query_10006               NVLAAIEEMKQLNANCVNIFMTLVATTRKGVDSISQQHIALVKSMDAHLKAEEESFSQRA
+lcl|Query_10007               MILKEQ---------------------------------SLAAESKTVLQELINVLKTDL
+                                                                                          
+
+lcl|Query_10001               -------------------------------------------YKQFEIGRNQLTSFTNK
+lcl|Query_10002               -------------------------------------------KADLTVSPNSLT-FHLK
+lcl|Query_10003               ENQSNGFQQGLLTKLTTLSGILSGLLSLENNHYNSMESFMNSCRQYFESHSSSIEAFNLS
+lcl|Query_10004               QGVLASIKAQNSVALIQLEALLQTTVAVFGKIHEDKEKFVEDTQKSHGKAEKQRGAFTSQ
+lcl|Query_10005               EDSFSKVKELLLSFFKDISQHFTDKSNQLEGILKKIEEFFTLFNVYKDRMEVEIINLTKM
+lcl|Query_10006               EQGRERQKCLEVLKEDLHSKIQVALKDFMMSSASISGEVYSSIEKEREECHKSALAFRDT
+lcl|Query_10007               LSSLEMILSPTVVSILKINSQLKHIFKTSLTVADKIEDQKKELDGFLSILCNNLHELQEN
+                                                                                          
+
+lcl|Query_10001               SEAQLNKAKTTVCALKELSDQFEQNIE---------------------------------
+lcl|Query_10002               SI----------------------------------------------------------
+lcl|Query_10003               SVAKFEEEKLLYSQMEELVRRLKANQESRAREVEEFVENQTMSRNALVNVAGEKSMELKN
+lcl|Query_10004               MKAMIEQQTKLFNESLAIAAQMEKLNSENDVEVKTVGQELREVEEKFAQAVDLQSQEALQ
+lcl|Query_10005               SDEKCRNTDDLLCNVLEMTTKLIEQNKSNKRCYDEAFENM---KKPLLNIT-----EATS
+lcl|Query_10006               QMAQITAGDGQLKQMSAAASNAASELDQNALLFDDEEGKLRAAVEKEKDRLVTERSSLRT
+lcl|Query_10007               TICSLVESQKQCGNLTEDLKTIKQTHSQELCKLMNLWTERFCALEEKCENIQKPLSSVQE
+                                                                                          
+
+lcl|Query_10001               ------------------------------------KFTQDFRDRMNQELDS--------
+lcl|Query_10002               ------------------------------------------------------------
+lcl|Query_10003               TFEKASEGNANAQNE----I-EKMNSLIPAFVSGSIKITQEVVSDTTFNLTT--------
+lcl|Query_10004               KCQEEADKGRDAIGD----V-ERLSSDLSSTISAS--FEQHEEQLTVTRDAH--------
+lcl|Query_10005               IIRDVVLPIKKIKTE----S-EEMNAVSNATNTASSQRLDEMKKNLIEKTGK--------
+lcl|Query_10006               SIEHSSTAIRNIATSECHSTQENLGAIAEAALDSASRIMDAARLNELSETKSELEYQKRA
+lcl|Query_10007               NIQQKSKDIVNKMTF----HSQKFCADSDGFSQELRNFNQEGTKLVEESVKHSDKLNGNL
+                                                                                          
+
+lcl|Query_10001               ----------------------------------------------------LKNVATEH
+lcl|Query_10002               ------------------------------------------------------------
+lcl|Query_10003               ----------------------------------------------------LSNSVQNH
+lcl|Query_10004               ----------------------------------------------------VKTISEFK
+lcl|Query_10005               ----------------------------------------------------VRNEVKTA
+lcl|Query_10006               LKVLQEAGDSSESQAVELIENCEALSDDLERAHDKIDSLRGVCTRNAAQLEELRRQRETE
+lcl|Query_10007               EKISQETEQRCESLNTRTVYFSEQWVSSLNEREQELHNL----------LEVVSQCCEAS
+                                                                                          
+
+lcl|Query_10001               KNEFGKAIHSTLSTINKQVNDC-----ASHSSMSQLFDN---------------TTQKME
+lcl|Query_10002               ------------------------------------------------------------
+lcl|Query_10003               YNEVNSNLNEATTVIGQQAEVL-----CNTMDQHREVDNVLATKAVN---HLDASQKSME
+lcl|Query_10004               EDVISQTSNSLASEISTQTSETVFSVKANCNIQAATVETAVGD-AAQ---RLQETQHAIE
+lcl|Query_10005               EETINAQCEEVVS-LAKESEIRLEEGSEEVFTLAEKEDEYIQTNCDQLEKYLESSKTEVE
+lcl|Query_10006               TNDITTVVDSWNQITQQEASVM-DSHCERLLSQLRSSEQMLSKQMSGLIAQVEKSAKEME
+lcl|Query_10007               SSDITEKSDGRKAAHEKQHNIF--------LDQMTIDEDKLIAQNLELNETIKIGLTKLN
+                                                                                          
+
+lcl|Query_10001               NFVEK-----------------------------------EFVQIQSSGKTPERKSGK--
+lcl|Query_10002               ------------------------------------------------------------
+lcl|Query_10003               HFVHQ-----------------------------------ELVRFKSDGDTPARKRRA--
+lcl|Query_10004               EFIHE-----------------------------------KVQRPQSSGQTPEKTKFP--
+lcl|Query_10005               RFVHH-----------------------------------QFLRESHSGNTPSRRGNTDL
+lcl|Query_10006               KTVNRAHEEAIAEYGNHTDNVLAAIEEMKQLNANCVNIFMTLVATTRKGVDSISQQHIAL
+lcl|Query_10007               CFLEQ-----------------------------------DLKLDIPTGTTPQRKSYL--
+                                                                                          
+
+lcl|Query_10001               FTEVLVNLPEAEKLFEEQKGFITPK------------KDVN-YKRRD-------------
+lcl|Query_10002               ------------------------------------------------------------
+lcl|Query_10003               FGVELMQPSSANDLYSNAAANLSPI------------KA---FSMRE-------------
+lcl|Query_10004               TTGEIPSLASADDLKSSFYASRQEF------------KRRKPIRTRE-------------
+lcl|Query_10005               MSATFSPIPSKDQLLKQTAKTPQRM------------SI---FRVRD-------------
+lcl|Query_10006               VKSMDAHLKAEEESFSQRAEQGRERQKCLEVLKEDLHSKIQ-VALKDFMMSSASISGEVY
+lcl|Query_10007               YPSTLVRTEPREHLLDQLKRKQPELLMMLNCSENNKEETIPDVDVEE-------------
+                                                                                          
+
+lcl|Query_10001               -------------------------------------------SFLDSSFVSSLVSPDTL
+lcl|Query_10002               ------------------------------------------------------------
+lcl|Query_10003               -------------------------------------------SILAPE-MGMLMSPDTI
+lcl|Query_10004               -------------------------------------------SLFENE--FPVMSPVSL
+lcl|Query_10005               -------------------------------------------TILDQK--LPLDSPNTL
+lcl|Query_10006               SSIEKEREECHKSALAFRDTQMAQITAGDGQLKQMSAAASNAASELDQNALLFDDEEGKL
+lcl|Query_10007               -------------------------------------------AVLGQYTEEPLSQEPSV
+                                                                                          
+
+lcl|Query_10001               KCNLQA--------------TNMVSTTKTGRLEPVDEEKKNECGTSLSFK----------
+lcl|Query_10002               ------------------------------------------------------------
+lcl|Query_10003               KAALVA--------------QSKKPTTS---VSSEGSENMQVDG----------------
+lcl|Query_10004               QKMLGSLEENDENEPETMNEMETISAKSMEIVSPEHASKVSRRGRRRVLQSGDE------
+lcl|Query_10005               KSQLPSVL--------------------------AAKREEEENGL---------------
+lcl|Query_10006               RAAVEKEKDRLVTERSSLRTSIEHSSTAIRNIATSECHSTQENLGAIAEAALDSASRIMD
+lcl|Query_10007               DAGVDCSSIGGVPFFQ--HKKSHGKDKENRGINTLERSKVEETTEHLVTKSRLPLRAQIN
+                                                                                          
+
+lcl|Query_10001               ------------------------------------------------------------
+lcl|Query_10002               ------------------------------------------------------------
+lcl|Query_10003               ------------------------------------------------------------
+lcl|Query_10004               ------------------------------------------------------------
+lcl|Query_10005               ------------------------------------------------------------
+lcl|Query_10006               AARLNASRSESNTEKIKSTLAFSQETFDDFVTAKFETPVSSGETPSRVARSFPIEAVKIP
+lcl|Query_10007               L-----------------------------------------------------------
+                                                                                          
+
+lcl|Query_10001               ------------------------------------------------------------
+lcl|Query_10002               ------------------------------------------------------------
+lcl|Query_10003               ------------------------------------------------------------
+lcl|Query_10004               ------------------------------------------------------------
+lcl|Query_10005               ------------------------------------------------------------
+lcl|Query_10006               DAGQLLQEWSQNASPKRRSFYRPRESLLEVPSNVLSPQTLKGVRPKLDDVSEYEDEYPKA
+lcl|Query_10007               ------------------------------------------------------------
+                                                                                          
+
+lcl|Query_10001               --------
+lcl|Query_10002               --------
+lcl|Query_10003               --------
+lcl|Query_10004               --------
+lcl|Query_10005               --------
+lcl|Query_10006               LKSNDFKH
+lcl|Query_10007               --------
+                                      
+
