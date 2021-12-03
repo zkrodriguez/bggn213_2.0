@@ -1,0 +1,62 @@
+---
+title: "Class_11"
+author: "Zaida Rodriguez (PID:A59010549)"
+date: "11/5/2021"
+output:
+ pdf_document:
+  latex_engine: xelatex
+---
+
+```{r}
+pdb.data <- read.csv("Data Export Summary.csv", row.names = 1)
+#pdb.data
+```
+
+> Q1: What percentage of structures in the PDB are solved by X-Ray and Electron Microscopy.
+
+The Xray is 87.53% and Em is 4.95%
+```{r}
+library(skimr)
+skim(pdb.data)
+round(sum(pdb.data$X.ray) / sum(pdb.data$Total) * 100, 2)
+round(sum(pdb.data$EM) / sum(pdb.data$Total) * 100, 2)
+
+#  to see all the column row percentage: 
+round((colSums(pdb.data) / sum(pdb.data$Total)) *100, 2)
+```
+
+
+> Q2: What proportion of structures in the PDB are protein?
+
+The proportion is 0.87
+
+```{r}
+#call for protein only
+prot <- pdb.data$Total[1]
+
+#call for the proportion of protein 
+prot.prop <- prot/sum(pdb.data$Total)
+prot.prop
+```
+
+> Q3: Type HIV in the PDB website search box on the home page and determine how many HIV-1 protease structures are in the current PDB?
+
+There were 22,824 protease protein structures
+
+
+## 2. Visualizing the HIV-1 Protease Structures 
+
+See VMD Image
+![(vmdscene.png)
+
+> Q4: Water molecules normally have 3 atoms. Why do we see just one atom per water molecule in this structure?
+
+We only see one because it can be overwhelming to see the all the atoms separate. Also we know that all 3 atoms are binded together so no need to see them separately
+
+> Q5: There is a conserved water molecule in the binding site. Can you identify this water molecule? What residue number does this water molecule have (see note below)?
+
+HOH 308
+
+
+
+
